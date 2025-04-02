@@ -19,5 +19,43 @@
             this.currentQuestionnaireId = 0;
             this.userAnswers = [];
         }
+
+        public void Start()
+        {
+            string[] menuOptions = { "Listar questionários", "Importar questionário", "Sair" };
+
+            Console.WriteLine(string.Concat(Enumerable.Repeat('=', 25)));
+            Console.WriteLine("QuestionIt");
+            Console.WriteLine(string.Concat(Enumerable.Repeat('=', 25)));
+
+            Console.WriteLine();
+
+            for (int i = 0; i < menuOptions.Length; i++)
+            {
+                Console.Write($"[{i}] {menuOptions[i]}\t");
+            }
+
+            bool userChoosenMenuOptionIsDigit;
+            int userChoosenMenuOptionIntParsed;
+            ConsoleKeyInfo userChoosenMenuOption;
+
+            Console.WriteLine();
+
+            do
+            {
+                Console.Write("\nInput: ");
+                userChoosenMenuOption = Console.ReadKey();
+
+                userChoosenMenuOptionIsDigit = int.TryParse(userChoosenMenuOption.KeyChar.ToString(), out userChoosenMenuOptionIntParsed);
+            } while (!userChoosenMenuOptionIsDigit || userChoosenMenuOptionIntParsed > 2 || userChoosenMenuOptionIntParsed < 0);
+
+            switch(userChoosenMenuOption.KeyChar)
+            {
+                case '0': Console.WriteLine("\nListando questionários..."); break;
+                case '1': Console.WriteLine("\nMostrnado opção de input do path..."); break;
+                case '2': break;
+                default: Console.WriteLine("\ninvalid option"); break;
+            }
+        }
     }
 }
