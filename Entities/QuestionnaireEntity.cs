@@ -2,27 +2,27 @@
 {
     public class QuestionnaireEntity
     {
-        private int id { get; }
-        private string title { get; }
-        private string? description { get; }
-        private DateTime createdAt { get; }
-        private DateTime? updatedAt { get; }
+        public int Id { get; private set; }
+        public string Title { get; private set; }
+        public string? Description { get; private set; }
+        public DateTime CreatedAt { get; private set; }
+        public DateTime? UpdatedAt { get; private set; }
 
         public QuestionnaireEntity(string title, string? description)
         {
-            this.title = this.FormatTitle(title);
-            this.description = description;
-            this.createdAt = DateTime.UtcNow;
-            this.updatedAt = null;
+            this.Title = this.FormatTitle(title);
+            this.Description = description;
+            this.CreatedAt = DateTime.UtcNow;
+            this.UpdatedAt = null;
         }
 
         public QuestionnaireEntity(int id, string title, string? description, DateTime createdAt, DateTime? updatedAt)
         {
-            this.id = id;
-            this.title = title;
-            this.description = description;
-            this.createdAt = createdAt;
-            this.updatedAt = updatedAt;
+            this.Id = id;
+            this.Title = title;
+            this.Description = description;
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
         }
 
         private string FormatTitle(string value)
