@@ -11,7 +11,7 @@
         public QuestionEntity(int questionnaireId, string title)
         {
             this.QuestionnaireId = questionnaireId;
-            this.Title = title;
+            this.Title = this.FormatTitle(title);
             this.CreatedAt = DateTime.UtcNow;
             this.UpdatedAt = null;
         }
@@ -20,7 +20,7 @@
         {
             this.Id = id;
             this.QuestionnaireId = questionnaireId;
-            this.Title = title;
+            this.Title = this.FormatTitle(title);
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
         }
