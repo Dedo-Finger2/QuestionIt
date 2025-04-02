@@ -57,5 +57,34 @@
                 default: Console.WriteLine("\ninvalid option"); break;
             }
         }
+
+        // TODO: Implement
+        private void Stop() { throw new Exception("method not implemented"); }
+        // TODO: Implement
+        private void ListQuestionnaires() { throw new Exception("method not implemented"); }
+        // TODO: Implement
+        private void ImportQuestionnaireJson() { throw new Exception("method not implemented"); }
+        // TODO: Implement
+        private void NextQuestionnaireListPage() { throw new Exception("method not implemented"); }
+        // TODO: Implement
+        private void PreviousQuestionnaireListPage() { throw new Exception("method not implemented"); }
+        // TODO: Implement
+        private void SelectQuestionnaire() { throw new Exception("method not implemented"); }
+        // TODO: Implement
+        private void StartQuestionnaire() { throw new Exception("method not implemented"); }
+        // TODO: Implement
+        private void NextQuestion() { throw new Exception("method not implemented"); }
+        // TODO: Implement
+        private void GenerateQuestionnaireResultsExcelReport() { throw new Exception("method not implemented"); }
+        // TODO: Implement
+        private void DeleteQuestionnaire() { throw new Exception("method not implemented"); }
+        // TODO: Implement
+        private void GenerateSimpleResultsReport() { throw new Exception("method not implemented"); }
+        // TODO: Implement
+        private void GenerateDetailedResultPDF() { throw new Exception("method not implemented"); }
+        // TODO: Implement
+        private void RedoQuestionnaire() { throw new Exception("method not implemented"); }
+        // TODO: Implement
+        private void ExportQuestionnaireJson() { throw new Exception("method not implemented"); }
     }
 }
