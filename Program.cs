@@ -1,4 +1,5 @@
-﻿using QuestionIt.Utils;
+﻿using QuestionIt.Entities;
+using QuestionIt.Utils;
 
 namespace QuestionIt
 {
