@@ -1,4 +1,6 @@
 ﻿using QuestionIt.Entities;
+using QuestionIt.Repositories.Implementations.InMemory;
+using QuestionIt.Services;
 using QuestionIt.Utils;
 
 namespace QuestionIt
@@ -8,8 +10,14 @@ namespace QuestionIt
         static void Main(string[] args)
         {
             Console.WriteLine("Hello, World!");
+
+            QuestionnaireRepository inMemoryQuestionnaireRepository = new();
+            QuestionRepository inMemoryQuestionRepository = new();
+            AlternativeRepository inMemoryAlternativeRepository = new();
+
+            QuestionnaireService questionnaireService = new(inMemoryQuestionnaireRepository, inMemoryQuestionRepository, inMemoryAlternativeRepository);
             
-            QuestionItApp app = new();
+            QuestionItApp app = new(questionnaireService);
 
             app.Start();
         }
