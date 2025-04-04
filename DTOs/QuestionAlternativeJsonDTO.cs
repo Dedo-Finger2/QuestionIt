@@ -1,9 +1,13 @@
-﻿namespace QuestionIt.DTOs
+﻿using System.Text.Json.Serialization;
+
+namespace QuestionIt.DTOs
 {
     public class QuestionAlternativeJsonDTO
     {
-        public string Title { get; private set; }
-        public int Correct { get; private set; }
+        [JsonPropertyName("title")]
+        public string Title { get; set; }
+        [JsonPropertyName("correct")]
+        public int Correct { get; set; }
 
         public QuestionAlternativeJsonDTO() { }
 
