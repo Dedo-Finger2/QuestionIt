@@ -1,12 +1,17 @@
-﻿namespace QuestionIt.DTOs
+﻿using System.Text.Json.Serialization;
+
+namespace QuestionIt.DTOs
 {
     public class QuestionnaireJsonDTO
     {
-        public string Title { get; private set; }
-        public string? Description { get; private set; }
-        public QuestionnaireQuestionJsonDTO[] QuestionnaireQuestions { get; private set; }
-        public DateTime CreatedAt { get; private set; }
-        public DateTime? UpdatedAt { get; private set; }
+        [JsonPropertyName("questionnaireTitle")]
+        public string Title { get; set; }
+        [JsonPropertyName("questionnaireDescription")]
+        public string? Description { get; set; }
+        [JsonPropertyName("questions")]
+        public QuestionnaireQuestionJsonDTO[] QuestionnaireQuestions { get; set; }
+        public DateTime CreatedAt { get; set; }
+        public DateTime? UpdatedAt { get; set; }
 
         public QuestionnaireJsonDTO() { }
 
