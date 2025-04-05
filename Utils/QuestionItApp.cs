@@ -1,4 +1,5 @@
-﻿using QuestionIt.Services;
+﻿using QuestionIt.Entities;
+using QuestionIt.Services;
 
 namespace QuestionIt.Utils
 {
@@ -57,7 +58,7 @@ namespace QuestionIt.Utils
 
             switch (userChoosenMenuOption.KeyChar)
             {
-                case '0': break;
+                case '0': this.ListQuestionnaires(); break;
                 case '1': this.ImportQuestionnaireJson(); break;
                 case '2': break;
                 default: Console.WriteLine("\ninvalid option"); break;
@@ -67,7 +68,19 @@ namespace QuestionIt.Utils
         // TODO: Implement
         private void Stop() { throw new Exception("method not implemented"); }
         // TODO: Implement
-        private void ListQuestionnaires() { }
+        private void ListQuestionnaires()
+        {
+            Console.Clear();
+
+            this.ShowTitle("Questionnaires List");
+
+            QuestionnaireEntity[] questionnaires = this.questionnaireService.GetAll();
+
+            foreach (QuestionnaireEntity questionnaire in questionnaires)
+            {
+                Console.WriteLine($"{questionnaire.Id} | {questionnaire.Title}");
+            }
+        }
         
         private void ImportQuestionnaireJson()
         {
