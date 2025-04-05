@@ -21,6 +21,8 @@ namespace QuestionIt.Repositories.Implementations.InMemory
                 return lastQuestionnaire.Id;
             } catch (InvalidOperationException e)
             {
+                Console.WriteLine(e.Message);
+                Console.WriteLine(e.StackTrace);
                 return 0;
             }
         }

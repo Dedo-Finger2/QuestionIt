@@ -30,9 +30,7 @@ namespace QuestionIt.Services
                 source = JsonSerializer.Deserialize<QuestionnaireJsonDTO>(json);
             }
 
-            QuestionnaireEntity questionnaire = new(source.Title, source.Description);
-
-            QuestionnaireEntity savedQuestionnaire = this.questionnaireRepository.Save(questionnaire);
+            QuestionnaireEntity savedQuestionnaire = this.questionnaireRepository.ImportFromJson(source);
 
             foreach (QuestionnaireQuestionJsonDTO jsonQuestion in source.QuestionnaireQuestions)
             {
