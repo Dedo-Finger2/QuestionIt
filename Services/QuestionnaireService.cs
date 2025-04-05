@@ -49,9 +49,11 @@ namespace QuestionIt.Services
             }
         }
 
-        public void ListQuestionnaires()
+        public QuestionnaireEntity[] GetAll()
         {
-            return;
+            QuestionnaireEntity[] questionnaires = this.questionnaireRepository.FindAll();
+
+            return questionnaires;
         }
     }
 }
